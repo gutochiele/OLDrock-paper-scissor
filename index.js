@@ -30,7 +30,26 @@ console.log("Computer draws: " + computerSelection)
     }
 }
 
-   
-  let playerSelection = "Paper";
-  playerSelection = playerSelection.toUpperCase();
-  console.log(playRound(playerSelection, computerSelection));
+
+function game(playRound){
+
+    for (let i = 0; i < 5; i++) {
+    
+        
+        let playerSelection = prompt("Lets play ROCK, PAPER, SCISSORS\nPut your choice below:");
+        playerSelection = playerSelection.toUpperCase();
+        
+        console.log(playRound(playerSelection, computerSelection));
+
+
+
+
+
+     }
+
+// let playerSelection = prompt("Lets play ROCK, PAPER, SCISSORS\nPut your choice below:");
+// playerSelection = playerSelection.toUpperCase();
+
+// console.log(playRound(playerSelection, computerSelection));
+
+    }
