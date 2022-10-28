@@ -1,3 +1,7 @@
+let playerScore = 0;
+let compScore = 0;
+let rounds = 0;
+
 function getComputerChoice(compRandom){
     return compRandom[Math.floor(Math.random()*compRandom.length)];
 }
@@ -5,7 +9,6 @@ function getComputerChoice(compRandom){
 
     let computerSelection = getComputerChoice(compRandom);
 
-console.log("Computer draws: " + computerSelection)
 
     function playRound(playerSelection, computerSelection){
     let win = `You win! ${playerSelection} beats ${computerSelection}!`;
@@ -16,40 +19,34 @@ console.log("Computer draws: " + computerSelection)
     if (playerSelection === computerSelection){
         return draw;
     }   else if (playerSelection === "ROCK", computerSelection === "SCISSORS"){
-        return win;
+        return win, playerScore++;
     }   else if (playerSelection === "ROCK", computerSelection === "PAPER"){
-        return lose;
+        return lose, compScore++;
     }   else if (playerSelection === "PAPER", computerSelection === "ROCK"){
-        return win;
+        return win, playerScore++;
     }   else if (playerSelection === "PAPER", computerSelection === "SCISSORS"){
-        return lose;
+        return lose, compScore++;
     }   else if (playerSelection === "SCISSORS", computerSelection === "ROCK"){
-        return lose;
+        return lose, compScore++;
     }   else if (playerSelection === "SCISSORS", computerSelection === "PAPER"){
-        return win;
+        return win, playerScore++;
     }
 }
 
 
-function game(playRound){
+// function game(){
+//     console.log("The game begins!")
+//     for (rounds = 0; rounds < 5; rounds++){
+//         playRound(playerSelection, computerSelection); 
 
-    for (let i = 0; i < 5; i++) {
-    
-        
-        let playerSelection = prompt("Lets play ROCK, PAPER, SCISSORS\nPut your choice below:");
-        playerSelection = playerSelection.toUpperCase();
-        
-        console.log(playRound(playerSelection, computerSelection));
+//     alert("Computer draws: " + computerSelection)
+//     alert("You chose: " + playerSelection)
 
-
-
-
-
-     }
+//     }
+//     console.log(" Player Score: " + playerScore);
+//     console.log("Computer Score: " + compScore);
+// }
 
 // let playerSelection = prompt("Lets play ROCK, PAPER, SCISSORS\nPut your choice below:");
 // playerSelection = playerSelection.toUpperCase();
-
-// console.log(playRound(playerSelection, computerSelection));
-
-    }
+    
