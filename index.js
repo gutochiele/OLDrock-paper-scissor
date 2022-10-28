@@ -16,28 +16,29 @@ function getComputerChoice(compRandom){
 
     let computerSelection = getComputerChoice(compRandom);
 
+    let win = `You win! ${playerSelection} beats ${computerSelection}!`;
+    let lose = `Oh no! You lose! ${computerSelection} beats ${playerSelection}!`;
+    let draw = "It's a draw!";
 
-    function playRound(playerSelection, computerSelection){
-    // let win = 'win';
-    // let lose = 'lose';
-    // let draw = 'draw';
-    // const result = ([lose, win, draw]);
+    function playRound(playerSelection, computerSelection){     
 
     if (playerSelection === computerSelection){
-        return draw;
+        return draw, rounds++;
     }   else if (playerSelection === "ROCK", computerSelection === "SCISSORS"){
-        return playerScore++, win;
+        return win, playerScore++, rounds++;
     }   else if (playerSelection === "ROCK", computerSelection === "PAPER"){
-        return compScore++, lose;
+        return lose, compScore++, rounds++;
     }   else if (playerSelection === "PAPER", computerSelection === "ROCK"){
-        return playerScore++, win;
+        return win, playerScore++, rounds++;
     }   else if (playerSelection === "PAPER", computerSelection === "SCISSORS"){
-        return compScore++, lose;
+        return lose, compScore++, rounds++;
     }   else if (playerSelection === "SCISSORS", computerSelection === "ROCK"){
-        return compScore++, lose;
+        return lose, compScore++, rounds++;
     }   else if (playerSelection === "SCISSORS", computerSelection === "PAPER"){
-        return playerScore++, win;
+        return win, playerScore++, rounds++;
 }
+
+
 }
 
 // function game(){
@@ -46,19 +47,22 @@ function getComputerChoice(compRandom){
 
         playRound(playerSelection, computerSelection);{ 
 
-        console.log("Computer draws: " + computerSelection);
+        console.log("Computer chose: " + computerSelection);
         console.log("You chose: " + playerSelection);
-        if (draw) {
-            console.log("It's a draw!");
+
+        if (playRound(draw)) {
+            console.log(draw);
             
-        } else if (lose){
-            console.log(`Oh no! You lose! ${computerSelection} beats ${playerSelection}!`);
+        } else if (playRound(lose)){
+            playerScore + 10;
+            console.log(lose);
            
-        } else if (win){
-            console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
+        } else if (playRound(win)){
+            console.log(win);
             
         }
 
         console.log(" Player Score: " + playerScore);
         console.log("Computer Score: " + compScore);
+        console.log(`It's the round number ${rounds}!`)
     }
