@@ -2,7 +2,7 @@ let playerScore = 0;
 let compScore = 0;
 let rounds = 0;
 
-console.log("The game begins!") 
+// console.log("The game begins!") 
 
 
 let playerSelection = prompt("Lets play ROCK, PAPER, SCISSORS\nPut your choice below:");
@@ -23,21 +23,22 @@ function getComputerChoice(compRandom){
     function playRound(playerSelection, computerSelection){     
 
     if (playerSelection === computerSelection){
-        return draw, rounds++;
+        return draw, rounds++, console.log(draw);
     }   else if (playerSelection === "ROCK", computerSelection === "SCISSORS"){
-        return win, playerScore++, rounds++;
+        return win, playerScore++, rounds++, console.log(win);
     }   else if (playerSelection === "ROCK", computerSelection === "PAPER"){
-        return lose, compScore++, rounds++;
+        return lose, compScore++, rounds++, console.log(lose);
     }   else if (playerSelection === "PAPER", computerSelection === "ROCK"){
-        return win, playerScore++, rounds++;
+        return win, playerScore++, rounds++, console.log(win);
     }   else if (playerSelection === "PAPER", computerSelection === "SCISSORS"){
-        return lose, compScore++, rounds++;
+        return lose, compScore++, rounds++, console.log(lose);
     }   else if (playerSelection === "SCISSORS", computerSelection === "ROCK"){
-        return lose, compScore++, rounds++;
+        return lose, compScore++, rounds++, console.log(lose);
     }   else if (playerSelection === "SCISSORS", computerSelection === "PAPER"){
-        return win, playerScore++, rounds++;
-}
-
+        return win, playerScore++, rounds++, console.log(win);
+    }   else if (playerSelection !== ["ROCK", "PAPER", "SCISSORS"]){
+        console.log("Sorry, I didn't understand that!");
+    }
 
 }
 
@@ -47,20 +48,12 @@ function getComputerChoice(compRandom){
 
         playRound(playerSelection, computerSelection);{ 
 
-        console.log("Computer chose: " + computerSelection);
-        console.log("You chose: " + playerSelection);
 
-        if (playRound(draw)) {
-            console.log(draw);
             
-        } else if (playRound(lose)){
-            playerScore + 10;
-            console.log(lose);
-           
-        } else if (playRound(win)){
-            console.log(win);
-            
-        }
+        console.log("You chose: " + playerSelection);
+        console.log("Computer chose: " + computerSelection);
+
+
 
         console.log(" Player Score: " + playerScore);
         console.log("Computer Score: " + compScore);
