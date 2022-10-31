@@ -50,8 +50,7 @@ function game(){
 }
 
 //LOOP FOR 5 ROUNDS
-while (rounds < 5) {
-
+for (;rounds < 5;) {
 	    playRound(playerSelection, computerSelection);{
 	    console.log("You chose: " + playerSelection);
 	    console.log("Computer chose: " + computerSelection);
@@ -61,7 +60,7 @@ while (rounds < 5) {
 	    console.log("------------------------------------")
 	    game();
 	    }
-        break;
+        // break;
 }
 //DISPLAY THE RESULT
         if (playerScore > compScore) {
@@ -69,6 +68,5 @@ while (rounds < 5) {
         } else {
             console.log("You LOST! :(")
         }
-
 }
 game();
