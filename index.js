@@ -4,6 +4,9 @@ let compScore = 0;
 let rounds = 0;
 function game(){
     
+    //LOOP FOR 5 ROUNDS
+    for (;rounds < 5;) {
+            
     //GETS THE PLAYER INPUT TO THE GAME
 
     let playerSelection = prompt("Lets play ROCK, PAPER, SCISSORS\nPut your choice below:");
@@ -43,18 +46,15 @@ function game(){
         }
     }     
 
-    //LOOP FOR 5 ROUNDS
-    for (;rounds < 5;) {
-            
-            playRound(playerSelection, computerSelection);{
-            console.log("You chose: " + playerSelection);
-            console.log("Computer chose: " + computerSelection);
-            console.log("Player Score: " + playerScore);
-            console.log("Computer Score: " + compScore);
-            console.log(`Round ${rounds}/5!`)   
-            console.log("------------------------------------")
-            game();
-            }
+    playRound(playerSelection, computerSelection);{
+        console.log("You chose: " + playerSelection);
+        console.log("Computer chose: " + computerSelection);
+        console.log("Player Score: " + playerScore);
+        console.log("Computer Score: " + compScore);
+        console.log(`Round ${rounds}/5!`)   
+        console.log("------------------------------------")
+        game();
+        }
     }
 }
 //CALL FOR THE GAME FUNCTION TO BEGIN
